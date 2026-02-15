@@ -1,0 +1,9 @@
+# robots.txt for fixdhakaroads.org
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fixdhakaroads.org/sitemap.xml
+
+# Crawl delay (optional, respectful to server)
+Crawl-delay: 1

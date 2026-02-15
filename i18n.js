@@ -95,25 +95,16 @@ class Translator {
             document.body.appendChild(switcher);
         }
 
-        switcher.innerHTML = `
-            <div class="lang-dropdown">
-                <button class="lang-btn">
-                    <i data-lucide="languages"></i>
-                    ${this.languages.find(l => l.languageCode === this.currentCulture)?.languageName || 'Language'}
-                </button>
-                <div class="lang-menu">
-                    ${this.languages.map(l => `
-                        <a href="#" class="${l.languageCode === this.currentCulture ? 'active' : ''}" 
-                           onclick="translator.setLanguage('${l.languageCode}'); return false;">
-                            ${l.languageName}
-                        </a>
-                    `).join('')}
-                </div>
-            </div>
-        `;
+        switcher.innerHTML = this.languages.map(l =>
+            `<button class="lang-btn${l.languageCode === this.currentCulture ? ' active' : ''}"
+                     data-lang="${l.languageCode}">${l.languageName}</button>`
+        ).join('');
 
-        // Re-init icons if Lucide is available
-        if (window.lucide) window.lucide.createIcons();
+        switcher.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                translator.setLanguage(btn.dataset.lang);
+            });
+        });
     }
 }
 

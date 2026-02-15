@@ -1,70 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════ PRIMARY META ═══════ -->
   <title>Fix Dhaka's Roads — Road Pricing for a Moving City</title>
   <meta name="description"
+    content="Dhaka loses $3.8 billion annually to traffic congestion. Road pricing can cut congestion by 30%, improve air quality, and fund public transport. Learn how a phased congestion pricing system with 3 zones could transform Dhaka's roads — backed by evidence from London, Stockholm, and Singapore.">
+  <meta name="keywords"
+    content="Dhaka road pricing, congestion pricing Dhaka, Dhaka traffic solution, road toll Bangladesh, Dhaka congestion charge, urban transport policy, fix Dhaka traffic, Dhaka public transport, smart city Dhaka">
+  <meta name="author" content="Fix Dhaka's Roads Initiative">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://fixdhakaroads.org/">
+
+  <!-- ═══════ LANGUAGE ALTERNATES ═══════ -->
+  <link rel="alternate" hreflang="en" href="https://fixdhakaroads.org/">
+  <link rel="alternate" hreflang="bn" href="https://fixdhakaroads.org/?lang=bn-BD">
+  <link rel="alternate" hreflang="x-default" href="https://fixdhakaroads.org/">
+
+  <!-- ═══════ OPEN GRAPH ═══════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fix Dhaka's Roads">
+  <meta property="og:title" content="Fix Dhaka's Roads — Road Pricing for a Moving City">
+  <meta property="og:description"
     content="Dhaka loses billions to traffic jams. Road pricing can cut congestion by 30%, clean the air, and fund better transport. Demand action now.">
+  <meta property="og:url" content="https://fixdhakaroads.org/">
+  <meta property="og:image" content="https://fixdhakaroads.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fix Dhaka's Roads — a policy proposal for congestion pricing in Dhaka, Bangladesh">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="bn_BD">
+
+  <!-- ═══════ TWITTER CARD ═══════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fix Dhaka's Roads — Road Pricing for a Moving City">
+  <meta name="twitter:description"
+    content="Road pricing can cut Dhaka's congestion by 30%. A proven, phased policy proposal backed by evidence from London, Stockholm & Singapore.">
+  <meta name="twitter:image" content="https://fixdhakaroads.org/og-image.png">
+  <meta name="twitter:image:alt" content="Fix Dhaka's Roads — congestion pricing proposal for Dhaka">
+
+  <!-- ═══════ PWA & THEME ═══════ -->
+  <meta name="theme-color" content="#0b0f1a">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Fix Dhaka Roads">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- ═══════ PERFORMANCE HINTS ═══════ -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://api.seliseblocks.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+  <!-- ═══════ STYLES ═══════ -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- ═══════ SCRIPTS ═══════ -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="i18n.js" defer></script>
+
+  <!-- ═══════ JSON-LD: WebSite ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Fix Dhaka's Roads",
+    "url": "https://fixdhakaroads.org/",
+    "description": "A policy proposal for congestion road pricing in Dhaka, Bangladesh. Road pricing can cut congestion by 30%, improve air quality, and fund public transport.",
+    "inLanguage": ["en", "bn"],
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://fixdhakaroads.org/"
+    }
+  }
+  </script>
+
+  <!-- ═══════ JSON-LD: Organization ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fix Dhaka's Roads Initiative",
+    "url": "https://fixdhakaroads.org/",
+    "logo": "https://fixdhakaroads.org/favicon.png",
+    "description": "A public interest initiative advocating for congestion pricing to solve Dhaka's traffic crisis.",
+    "sameAs": [
+      "https://twitter.com/hashtag/FixDhakaTraffic",
+      "https://facebook.com/fixdhakaroads"
+    ]
+  }
+  </script>
+
+  <!-- ═══════ JSON-LD: Article ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Fix Dhaka's Roads — Road Pricing for a Moving City",
+    "description": "Dhaka loses billions to traffic jams. Road pricing can cut congestion by 30%, clean the air, and fund better transport. A phased 3-zone congestion pricing proposal.",
+    "image": "https://fixdhakaroads.org/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Fix Dhaka's Roads Initiative"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fix Dhaka's Roads Initiative",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fixdhakaroads.org/favicon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://fixdhakaroads.org/"
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2026-02-15",
+    "keywords": ["road pricing", "congestion pricing", "Dhaka traffic", "urban transport", "Bangladesh"],
+    "about": {
+      "@type": "Thing",
+      "name": "Congestion pricing",
+      "description": "A demand-side strategy to regulate traffic by charging vehicles for road usage, particularly in congested zones during peak hours."
+    },
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- ═══════ JSON-LD: BreadcrumbList ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fixdhakaroads.org/" },
+      { "@type": "ListItem", "position": 2, "name": "The Problem", "item": "https://fixdhakaroads.org/#problem" },
+      { "@type": "ListItem", "position": 3, "name": "The Solution", "item": "https://fixdhakaroads.org/#idea" },
+      { "@type": "ListItem", "position": 4, "name": "Zones & Pricing", "item": "https://fixdhakaroads.org/#zones" },
+      { "@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://fixdhakaroads.org/#faq" },
+      { "@type": "ListItem", "position": 6, "name": "Take Action", "item": "https://fixdhakaroads.org/#cta" }
+    ]
+  }
+  </script>
+
+  <!-- ═══════ JSON-LD: FAQPage ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Isn't road pricing just another tax on the poor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The system includes subsidies for low-income users like rickshaw pullers and daily wage earners via digital wallets or exemptions. Residents in priced zones get 50% off passes. And the revenue directly funds public transport — buses and metro — which the majority of lower-income commuters rely on. This actually helps the poor by making buses faster and more reliable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does road pricing actually work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. London's congestion charge cut traffic by 30%. Stockholm saw a 20% reduction. Singapore has used road pricing for decades with consistent results. The evidence is overwhelming — when driving costs reflect real impact, people make smarter choices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about emergency vehicles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All licensed emergency vehicles — ambulances, fire trucks, and police — are completely exempt. They pay ৳0 across all zones, all times. No exceptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How will road pricing fees be collected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initially through simple passes (day, week, month, or year) checked at physical tollgates by attendants — just like existing highway tolls. Over time, the system can upgrade to apps, ANPR cameras, or electronic tags. The technology is deliberately kept simple at first to ensure smooth adoption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Won't road pricing cause traffic jams at tollgates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The pass system minimizes tollgate delays — most regular users will have weekly or monthly passes displayed as stickers, requiring only a quick visual check. The pilot starts with just 4–6 gates in a bounded area, and real-world data from the pilot will optimize gate placement before expansion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does the road pricing revenue go?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revenue is earmarked for public transport improvements: metro expansions, new bus fleets, road maintenance, and infrastructure. This creates a virtuous cycle — better alternatives make it easier for people to leave their cars at home, further reducing congestion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why not just build more roads instead of road pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Building roads in one of the world's densest cities is nearly impossible — and research shows new roads actually induce more traffic (induced demand). The smarter approach is making existing roads work better by managing demand. Road pricing does exactly that."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════ JSON-LD: Speakable (for voice assistants & LLMs) ═══════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Fix Dhaka's Roads — Road Pricing for a Moving City",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-content", ".section-title", ".section-subtitle"]
+    },
+    "url": "https://fixdhakaroads.org/"
+  }
+  </script>
 </head>
 
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+  <!-- ═══════ SKIP NAVIGATION (Accessibility) ═══════ -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════ SITE HEADER / NAV ═══════ -->
+  <header class="site-header" role="banner">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#top" class="nav-logo" aria-label="Fix Dhaka's Roads — Home">
+        <img src="favicon.png" alt="Fix Dhaka's Roads logo" width="28" height="28" loading="eager">
+        <span>Fix Dhaka's Roads</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#idea">Solution</a></li>
+        <li><a href="#zones">Zones</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#rollout">Rollout</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cta" class="nav-cta">Take Action</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i data-lucide="menu" style="width:24px;height:24px"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main" itemprop="mainContentOfPage">
 
   <!-- ════════════════════════ HERO ════════════════════════ -->
-  <section class="hero" id="top">
+  <section class="hero" id="top" aria-labelledby="hero-heading">
     <div class="hero-content fade-in">
       <div class="hero-badge" data-i18n="HERO_BADGE">
-        <span>🚦</span> A Policy Proposal for Dhaka
+        <span aria-hidden="true">🚦</span> A Policy Proposal for Dhaka
       </div>
-      <h1 data-i18n="HERO_TITLE">Dhaka Deserves<br>to <span class="gradient-text">Move.</span></h1>
+      <h1 id="hero-heading" data-i18n="HERO_TITLE">Dhaka Deserves<br>to <span class="gradient-text">Move.</span></h1>
       <p data-i18n="HERO_SUBTITLE">Every day, millions waste 2+ hours stuck in traffic. Road pricing is a proven, fair
         solution that can cut congestion by 30% — like it did in London, Stockholm, and Singapore.</p>
       <div class="hero-buttons">
-        <a href="#problem" class="btn btn-primary" data-i18n="BTN_LEARN_HOW">
-          Learn How <i data-lucide="arrow-down" style="width:18px;height:18px"></i>
+        <a href="#problem" class="btn btn-primary" data-i18n="BTN_LEARN_HOW" aria-label="Learn how road pricing works">
+          Learn How <i data-lucide="arrow-down" style="width:18px;height:18px" aria-hidden="true"></i>
         </a>
-        <a href="#cta" class="btn btn-outline" data-i18n="BTN_TAKE_ACTION">
-          Take Action <i data-lucide="megaphone" style="width:18px;height:18px"></i>
+        <a href="#cta" class="btn btn-outline" data-i18n="BTN_TAKE_ACTION" aria-label="Take action for Dhaka's roads">
+          Take Action <i data-lucide="megaphone" style="width:18px;height:18px" aria-hidden="true"></i>
         </a>
       </div>
     </div>
-    <div class="hero-scroll">
+    <div class="hero-scroll" aria-hidden="true">
       <i data-lucide="chevrons-down" style="width:28px;height:28px"></i>
     </div>
   </section>
 
   <!-- ════════════════════════ THE PROBLEM ════════════════════════ -->
-  <section class="section" id="problem">
+  <section class="section" id="problem" aria-labelledby="problem-heading">
     <div class="container fade-in">
       <div class="section-label" data-i18n="PROBLEM_LABEL"><i data-lucide="alert-triangle"
-          style="width:16px;height:16px"></i> The Problem</div>
-      <h2 class="section-title" data-i18n="PROBLEM_TITLE">2+ Hours Stuck.<br><span class="gradient-text">Every. Single.
+          style="width:16px;height:16px" aria-hidden="true"></i> The Problem</div>
+      <h2 id="problem-heading" class="section-title" data-i18n="PROBLEM_TITLE">2+ Hours Stuck.<br><span class="gradient-text">Every. Single.
           Day.</span></h2>
       <p class="section-subtitle" data-i18n="PROBLEM_SUBTITLE">Dhaka is one of the slowest cities on Earth. Traffic jams
         cost the economy billions, poison the air, and steal time from families.</p>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="icon-circle"><i data-lucide="gauge" style="width:24px;height:24px"></i></div>
+      <div class="stats-grid" role="list" aria-label="Key traffic statistics for Dhaka">
+        <div class="stat-card" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="gauge" style="width:24px;height:24px"></i></div>
           <div class="stat-value">6–15</div>
           <div class="stat-label">km/h average speed in the city</div>
         </div>
-        <div class="stat-card">
-          <div class="icon-circle"><i data-lucide="clock" style="width:24px;height:24px"></i></div>
+        <div class="stat-card" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="clock" style="width:24px;height:24px"></i></div>
           <div class="stat-value">2+ hrs</div>
           <div class="stat-label">daily commute time wasted</div>
         </div>
-        <div class="stat-card">
-          <div class="icon-circle"><i data-lucide="cloud-off" style="width:24px;height:24px"></i></div>
+        <div class="stat-card" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="cloud-off" style="width:24px;height:24px"></i></div>
           <div class="stat-value">Toxic</div>
           <div class="stat-label">air quality from idling engines</div>
         </div>
-        <div class="stat-card">
-          <div class="icon-circle"><i data-lucide="trending-down" style="width:24px;height:24px"></i></div>
+        <div class="stat-card" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="trending-down" style="width:24px;height:24px"></i></div>
           <div class="stat-value">Billions</div>
           <div class="stat-label">in lost economic productivity (BDT)</div>
         </div>
@@ -73,71 +322,71 @@
   </section>
 
   <!-- ════════════════════════ THE IDEA ════════════════════════ -->
-  <section class="section" id="idea">
+  <section class="section" id="idea" aria-labelledby="solution-heading">
     <div class="container fade-in">
       <div class="section-label" data-i18n="SOLUTION_LABEL"><i data-lucide="lightbulb"
-          style="width:16px;height:16px"></i> The Solution</div>
-      <h2 class="section-title" data-i18n="SOLUTION_TITLE">Pay for Roads<br><span class="gradient-text">Like
+          style="width:16px;height:16px" aria-hidden="true"></i> The Solution</div>
+      <h2 id="solution-heading" class="section-title" data-i18n="SOLUTION_TITLE">Pay for Roads<br><span class="gradient-text">Like
           Electricity.</span></h2>
       <p class="section-subtitle" data-i18n="SOLUTION_SUBTITLE">Road pricing means you pay based on how much road space
         you actually use — not for
         simply owning a vehicle. It's fair, efficient, and proven worldwide.</p>
 
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="map-pin" style="width:22px;height:22px"></i></div>
+      <div class="features-grid" role="list" aria-label="How road pricing works">
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="map-pin" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Location-Based</h3>
             <p>Fees depend on which zone you drive through — the most congested areas cost more.</p>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="clock" style="width:22px;height:22px"></i></div>
+        </article>
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="clock" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Time-Based</h3>
             <p>Peak hours cost more. Off-peak and night driving is cheap or free — incentivizing smarter travel times.
             </p>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="maximize" style="width:22px;height:22px"></i></div>
+        </article>
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="maximize" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Size Matters</h3>
             <p>Larger, slower vehicles occupy more road space and pay proportionally more. Compact vehicles are
               rewarded.</p>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="banknote" style="width:22px;height:22px"></i></div>
+        </article>
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="banknote" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Revenue for Transit</h3>
             <p>Every taka collected funds metro expansions, new buses, and better roads for everyone.</p>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="ambulance" style="width:22px;height:22px"></i></div>
+        </article>
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="ambulance" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Emergency Vehicles Free</h3>
             <p>Licensed ambulances, fire trucks, and police vehicles are fully exempt — always.</p>
           </div>
-        </div>
-        <div class="feature-item">
-          <div class="icon-circle"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
+        </article>
+        <article class="feature-item" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Proven Globally</h3>
             <p>London cut congestion 30%. Stockholm saw 20% fewer cars. Singapore pioneered it decades ago.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════ ZONES & TIMING ════════════════════════ -->
-  <section class="section" id="zones">
+  <section class="section" id="zones" aria-labelledby="zones-heading">
     <div class="container fade-in">
-      <div class="section-label" data-i18n="ZONES_LABEL"><i data-lucide="layers" style="width:16px;height:16px"></i>
+      <div class="section-label" data-i18n="ZONES_LABEL"><i data-lucide="layers" style="width:16px;height:16px" aria-hidden="true"></i>
         Zones & Timing</div>
-      <h2 class="section-title" data-i18n="ZONES_TITLE">Fair Pricing.<br><span class="gradient-text">Targeted
+      <h2 id="zones-heading" class="section-title" data-i18n="ZONES_TITLE">Fair Pricing.<br><span class="gradient-text">Targeted
           Relief.</span></h2>
       <p class="section-subtitle" data-i18n="ZONES_SUBTITLE">Three zones match Dhaka's congestion levels. Pricing
         adjusts by time of day to smooth
@@ -195,10 +444,10 @@
   </section>
 
   <!-- ════════════════════════ VEHICLE PRICING ════════════════════════ -->
-  <section class="section" id="pricing">
+  <section class="section" id="pricing" aria-labelledby="pricing-heading">
     <div class="container fade-in">
-      <div class="section-label"><i data-lucide="car" style="width:16px;height:16px"></i> Vehicle Pricing</div>
-      <h2 class="section-title">Bigger Vehicle,<br><span class="gradient-text">Bigger Responsibility.</span></h2>
+      <div class="section-label"><i data-lucide="car" style="width:16px;height:16px" aria-hidden="true"></i> Vehicle Pricing</div>
+      <h2 id="pricing-heading" class="section-title">Bigger Vehicle,<br><span class="gradient-text">Bigger Responsibility.</span></h2>
       <p class="section-subtitle">Charges reflect the road space you occupy and how fast you move. Smaller, faster
         vehicles pay less.</p>
 
@@ -226,37 +475,37 @@
               <td>1.5</td>
               <td>10 km/h</td>
               <td>0.6</td>
-              <td><span class="charge-zone">৳6 / ৳4 / ৳2</span></td>
-              <td><span class="charge-zone">৳3 / ৳2 / ৳1</span></td>
-              <td><span class="charge-zone">৳1 / ৳0.5 / ৳0</span></td>
+              <td><span class="charge-zone">৳60 / ৳40 / ৳20</span></td>
+              <td><span class="charge-zone">৳30 / ৳20 / ৳10</span></td>
+              <td><span class="charge-zone">৳10 / ৳5 / ৳0</span></td>
             </tr>
             <tr>
               <td>
                 <div class="vehicle-name">
-                  <span class="vehicle-icon"><i data-lucide="accessibility" style="width:16px;height:16px"></i></span>
+                  <span class="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8 18h7"/><path d="M12 18V9h7v9"/><path d="M12 9c1-3 3-4.5 5-5"/><path d="M5 15l2.5-7H12"/><path d="M12 13h7"/></svg></span>
                   Rickshaw
                 </div>
               </td>
               <td>2.5</td>
               <td>8 km/h</td>
               <td>1.3</td>
-              <td><span class="charge-zone">৳13 / ৳9 / ৳5</span></td>
-              <td><span class="charge-zone">৳7 / ৳5 / ৳3</span></td>
-              <td><span class="charge-zone">৳2 / ৳1 / ৳0</span></td>
+              <td><span class="charge-zone">৳130 / ৳90 / ৳50</span></td>
+              <td><span class="charge-zone">৳70 / ৳50 / ৳30</span></td>
+              <td><span class="charge-zone">৳20 / ৳10 / ৳0</span></td>
             </tr>
             <tr>
               <td>
                 <div class="vehicle-name">
-                  <span class="vehicle-icon"><i data-lucide="zap" style="width:16px;height:16px"></i></span>
+                  <span class="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="18" r="3"/><circle cx="20" cy="18" r="2"/><path d="M10 18h8"/><path d="M4 15l2-5h7l5 2v3H4z"/><path d="M13 10v5"/><path d="M6 10l-2 5"/></svg></span>
                   CNG (Auto)
                 </div>
               </td>
               <td>3.0</td>
               <td>15 km/h</td>
               <td>0.8</td>
-              <td><span class="charge-zone">৳8 / ৳6 / ৳3</span></td>
-              <td><span class="charge-zone">৳4 / ৳3 / ৳2</span></td>
-              <td><span class="charge-zone">৳1 / ৳0.5 / ৳0</span></td>
+              <td><span class="charge-zone">৳80 / ৳60 / ৳30</span></td>
+              <td><span class="charge-zone">৳40 / ৳30 / ৳20</span></td>
+              <td><span class="charge-zone">৳10 / ৳5 / ৳0</span></td>
             </tr>
             <tr>
               <td>
@@ -268,9 +517,9 @@
               <td>2.0</td>
               <td>20 km/h</td>
               <td>0.4</td>
-              <td><span class="charge-zone">৳4 / ৳3 / ৳2</span></td>
-              <td><span class="charge-zone">৳2 / ৳1.5 / ৳1</span></td>
-              <td><span class="charge-zone">৳0.5 / ৳0 / ৳0</span></td>
+              <td><span class="charge-zone">৳40 / ৳30 / ৳20</span></td>
+              <td><span class="charge-zone">৳20 / ৳15 / ৳10</span></td>
+              <td><span class="charge-zone">৳5 / ৳0 / ৳0</span></td>
             </tr>
             <tr>
               <td>
@@ -282,9 +531,9 @@
               <td>8.0</td>
               <td>12 km/h</td>
               <td>2.7</td>
-              <td><span class="charge-zone">৳27 / ৳19 / ৳14</span></td>
-              <td><span class="charge-zone">৳14 / ৳10 / ৳7</span></td>
-              <td><span class="charge-zone">৳5 / ৳3 / ৳1</span></td>
+              <td><span class="charge-zone">৳270 / ৳190 / ৳140</span></td>
+              <td><span class="charge-zone">৳140 / ৳100 / ৳70</span></td>
+              <td><span class="charge-zone">৳50 / ৳30 / ৳10</span></td>
             </tr>
             <tr>
               <td>
@@ -296,9 +545,9 @@
               <td>15.0</td>
               <td>10 km/h</td>
               <td>6.0</td>
-              <td><span class="charge-zone">৳60 / ৳42 / ৳30</span></td>
-              <td><span class="charge-zone">৳30 / ৳21 / ৳15</span></td>
-              <td><span class="charge-zone">৳10 / ৳7 / ৳3</span></td>
+              <td><span class="charge-zone">৳600 / ৳420 / ৳300</span></td>
+              <td><span class="charge-zone">৳300 / ৳210 / ৳150</span></td>
+              <td><span class="charge-zone">৳100 / ৳70 / ৳30</span></td>
             </tr>
             <tr>
               <td>
@@ -310,25 +559,25 @@
               <td>20.0</td>
               <td>10 km/h</td>
               <td>8.0</td>
-              <td><span class="charge-zone">৳80 / ৳56 / ৳40</span></td>
-              <td><span class="charge-zone">৳40 / ৳28 / ৳20</span></td>
-              <td><span class="charge-zone">৳15 / ৳10 / ৳5</span></td>
+              <td><span class="charge-zone">৳800 / ৳560 / ৳400</span></td>
+              <td><span class="charge-zone">৳400 / ৳280 / ৳200</span></td>
+              <td><span class="charge-zone">৳150 / ৳100 / ৳50</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <p style="margin-top: 16px; font-size: 0.82rem; color: var(--text-muted);">
-        Base: ৳10/km Zone A peak. Zone B: −30%. Zone C: −50%. Off-peak: 50%. Night: 20%. Emergency vehicles: always ৳0.
+        Base: ৳100/km Zone A peak. Zone B: −30%. Zone C: −50%. Off-peak: 50%. Night: 20%. Emergency vehicles: always ৳0.
       </p>
     </div>
   </section>
 
   <!-- ════════════════════════ EFFICIENCY ════════════════════════ -->
-  <section class="section" id="efficiency">
+  <section class="section" id="efficiency" aria-labelledby="efficiency-heading">
     <div class="container fade-in">
-      <div class="section-label" data-i18n="EFFICIENCY_LABEL"><i data-lucide="users" style="width:16px;height:16px"></i>
+      <div class="section-label" data-i18n="EFFICIENCY_LABEL"><i data-lucide="users" style="width:16px;height:16px" aria-hidden="true"></i>
         Efficiency Rewards</div>
-      <h2 class="section-title" data-i18n="EFFICIENCY_TITLE">Share the Ride.<br><span class="gradient-text">Share the
+      <h2 id="efficiency-heading" class="section-title" data-i18n="EFFICIENCY_TITLE">Share the Ride.<br><span class="gradient-text">Share the
           Savings.</span></h2>
       <p class="section-subtitle" data-i18n="EFFICIENCY_SUBTITLE">Cars with 3+ passengers get 50% off. Solo drivers pay
         50% more. The system rewards
@@ -338,14 +587,14 @@
         <div class="comparison-card bad">
           <div class="comp-icon"><i data-lucide="user" style="width:28px;height:28px"></i></div>
           <div class="comp-title">Solo Driver (1 person)</div>
-          <div class="comp-price">৳40.5 /km</div>
+          <div class="comp-price">৳405 /km</div>
           <div class="comp-detail">50% surcharge — occupying space for 5 but carrying 1</div>
         </div>
         <div class="comparison-card good">
           <div class="comp-icon"><i data-lucide="users" style="width:28px;height:28px"></i></div>
           <div class="comp-title">Carpool (4 people)</div>
-          <div class="comp-price">৳13.5 /km</div>
-          <div class="comp-detail">50% discount — efficient use, just ৳3.4 per person</div>
+          <div class="comp-price">৳135 /km</div>
+          <div class="comp-detail">50% discount — efficient use, just ৳33.8 per person</div>
         </div>
       </div>
 
@@ -361,11 +610,11 @@
   </section>
 
   <!-- ════════════════════════ ROLLOUT PLAN ════════════════════════ -->
-  <section class="section" id="rollout">
+  <section class="section" id="rollout" aria-labelledby="rollout-heading">
     <div class="container fade-in">
-      <div class="section-label" data-i18n="ROLLOUT_LABEL"><i data-lucide="rocket" style="width:16px;height:16px"></i>
+      <div class="section-label" data-i18n="ROLLOUT_LABEL"><i data-lucide="rocket" style="width:16px;height:16px" aria-hidden="true"></i>
         Rollout Plan</div>
-      <h2 class="section-title" data-i18n="ROLLOUT_TITLE">Start Small.<br><span class="gradient-text">Scale
+      <h2 id="rollout-heading" class="section-title" data-i18n="ROLLOUT_TITLE">Start Small.<br><span class="gradient-text">Scale
           Smart.</span></h2>
       <p class="section-subtitle" data-i18n="ROLLOUT_SUBTITLE">A phased approach starts with a manageable pilot, learns
         from data, builds trust, and
@@ -380,8 +629,8 @@
             easy tollgate setup.</p>
           <ul>
             <li data-i18n="ROLLOUT_STEP1_LI1">4–6 manual tollgates at main entry points</li>
-            <li data-i18n="ROLLOUT_STEP1_LI2">Day passes: ৳50–100 · Week: ৳200–400 · Month: ৳800–1,500 · Year:
-              ৳8,000–15,000</li>
+            <li data-i18n="ROLLOUT_STEP1_LI2">Day passes: ৳500–1,000 · Week: ৳2,000–4,000 · Month: ৳8,000–15,000 · Year:
+              ৳80,000–150,000</li>
             <li data-i18n="ROLLOUT_STEP1_LI3">Residents get 50% subsidized passes</li>
             <li data-i18n="ROLLOUT_STEP1_LI4">Target: 10–20% reduction in peak cars</li>
           </ul>
@@ -415,11 +664,11 @@
   </section>
 
   <!-- ════════════════════════ FAQ ════════════════════════ -->
-  <section class="section" id="faq">
+  <section class="section" id="faq" aria-labelledby="faq-heading">
     <div class="container fade-in">
-      <div class="section-label" data-i18n="FAQ_LABEL"><i data-lucide="help-circle" style="width:16px;height:16px"></i>
+      <div class="section-label" data-i18n="FAQ_LABEL"><i data-lucide="help-circle" style="width:16px;height:16px" aria-hidden="true"></i>
         FAQ</div>
-      <h2 class="section-title" data-i18n="FAQ_TITLE">Your Questions.<br><span class="gradient-text">Honest
+      <h2 id="faq-heading" class="section-title" data-i18n="FAQ_TITLE">Your Questions.<br><span class="gradient-text">Honest
           Answers.</span></h2>
       <p class="section-subtitle" data-i18n="FAQ_SUBTITLE">We know you have concerns. Here are straightforward answers
         to the most common ones.
@@ -521,11 +770,11 @@
   </section>
 
   <!-- ════════════════════════ CTA ════════════════════════ -->
-  <section class="section cta-section" id="cta">
+  <section class="section cta-section" id="cta" aria-labelledby="cta-heading">
     <div class="container fade-in">
-      <div class="section-label" data-i18n="CTA_LABEL"><i data-lucide="megaphone" style="width:16px;height:16px"></i>
+      <div class="section-label" data-i18n="CTA_LABEL"><i data-lucide="megaphone" style="width:16px;height:16px" aria-hidden="true"></i>
         Take Action</div>
-      <h2 class="section-title" data-i18n="CTA_TITLE">Demand Better Roads.<br><span class="gradient-text">Demand
+      <h2 id="cta-heading" class="section-title" data-i18n="CTA_TITLE">Demand Better Roads.<br><span class="gradient-text">Demand
           Action.</span></h2>
       <p class="section-subtitle" data-i18n="CTA_SUBTITLE">This isn't a dream. It's a proven policy used worldwide.
         Dhaka's leaders have the
@@ -533,34 +782,37 @@
 
       <div class="hero-buttons" style="margin-bottom: 32px;">
         <a href="https://twitter.com/intent/tweet?text=Dhaka%20deserves%20to%20move.%20Road%20pricing%20can%20cut%20congestion%20by%2030%25.%20Our%20leaders%20must%20act%20now.%20%23FixDhakaTraffic%20%23RoadPricing"
-          target="_blank" class="btn btn-primary">
-          <i data-lucide="share-2" style="width:18px;height:18px"></i> Share on X / Twitter
+          target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Share this proposal on X / Twitter">
+          <i data-lucide="share-2" style="width:18px;height:18px" aria-hidden="true"></i> Share on X / Twitter
         </a>
         <a href="https://www.facebook.com/sharer/sharer.php?quote=Dhaka%20deserves%20to%20move.%20Road%20pricing%20can%20cut%20congestion%20by%2030%25."
-          target="_blank" class="btn btn-outline">
-          <i data-lucide="share-2" style="width:18px;height:18px"></i> Share on Facebook
+          target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Share this proposal on Facebook">
+          <i data-lucide="share-2" style="width:18px;height:18px" aria-hidden="true"></i> Share on Facebook
         </a>
       </div>
 
-      <div
+      <blockquote class="cta-quote"
         style="padding: 28px; background: var(--bg-card); border: 1px solid rgba(0,229,155,0.15); border-radius: var(--radius); max-width: 600px; margin: 0 auto;">
         <p
           style="font-size: 1.05rem; color: var(--text-heading); font-weight: 700; margin-bottom: 8px; text-align: center;">
-          📢 Tell your representative:
+          <span aria-hidden="true">📢</span> Tell your representative:
         </p>
         <p style="font-size: 0.95rem; color: var(--text-muted); text-align: center; font-style: italic;">
           "I support road pricing for Dhaka. Start the pilot in Gulshan &amp; Banani. Use the revenue for public
           transport. Our city deserves to move."
         </p>
-      </div>
+      </blockquote>
     </div>
   </section>
 
+  </main><!-- /main-content -->
+
   <!-- ════════════════════════ FOOTER ════════════════════════ -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container" data-i18n="FOOTER_TEXT">
       <p>A public interest concept for smarter, fairer roads in Dhaka. Roads are a shared resource — let's charge for
         them like one.</p>
+      <p class="footer-copyright">&copy; 2026 Fix Dhaka's Roads Initiative. Open-source policy proposal.</p>
     </div>
   </footer>
 
@@ -569,17 +821,42 @@
     // Initialize Lucide icons
     lucide.createIcons();
 
-    // Intersection Observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+    // Intersection Observer for fade-in animations (with prefers-reduced-motion check)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    if (prefersReducedMotion) {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    }
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('nav-open');
+      });
+
+      // Close nav when clicking a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navLinks.classList.remove('nav-open');
+        });
+      });
+    }
   </script>
 
 </body>
