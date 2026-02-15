@@ -1,9 +1,9 @@
-# robots.txt for fixdhakaroads.org
+# robots.txt for pbhdfx-dtnbm.seliseblocks.com
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://fixdhakaroads.org/sitemap.xml
+Sitemap: https://pbhdfx-dtnbm.seliseblocks.com/sitemap.xml
 
 # Crawl delay (optional, respectful to server)
 Crawl-delay: 1
