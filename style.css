@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* Google Fonts loaded via <link> in HTML <head> for proper loading order */
 
 /* ===== ACCESSIBILITY: Skip Link ===== */
 .skip-link {
@@ -190,10 +190,12 @@ img {
   color: var(--accent);
 }
 
-.nav-logo img {
+.nav-logo img,
+.nav-logo-icon {
   width: 28px;
   height: 28px;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .nav-links {
