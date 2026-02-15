@@ -73,12 +73,13 @@
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
   <!-- ═══════ STYLES ═══════ -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="style.css">
 
   <!-- ═══════ SCRIPTS ═══════ -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- i18n.js removed: file not available on deployment -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="i18n.js" defer></script>
 
   <!-- ═══════ JSON-LD: WebSite ═══════ -->
   <script type="application/ld+json">
@@ -281,7 +282,7 @@
 
   <!-- ════════════════════════ HERO ════════════════════════ -->
   <section class="hero" id="top" aria-labelledby="hero-heading">
-    <div class="hero-content fade-in">
+    <div class="hero-content">
       <div class="hero-badge" data-i18n="HERO_BADGE">
         <span aria-hidden="true">🚦</span> A Policy Proposal for Dhaka
       </div>
@@ -332,6 +333,11 @@
           <div class="icon-circle" aria-hidden="true"><i data-lucide="trending-down" style="width:24px;height:24px"></i></div>
           <div class="stat-value">Billions</div>
           <div class="stat-label">in lost economic productivity (BDT)</div>
+        </div>
+        <div class="stat-card" role="listitem">
+          <div class="icon-circle" aria-hidden="true"><i data-lucide="volume-x" style="width:24px;height:24px"></i></div>
+          <div class="stat-value">Deafening</div>
+          <div class="stat-label">noise pollution from excessive honking caused by overuse of road space</div>
         </div>
       </div>
     </div>
@@ -828,51 +834,53 @@
     <div class="container" data-i18n="FOOTER_TEXT">
       <p>A public interest concept for smarter, fairer roads in Dhaka. Roads are a shared resource — let's charge for
         them like one.</p>
-      <p class="footer-copyright">&copy; 2026 Fix Dhaka's Roads Initiative. Open-source policy proposal.</p>
+      <p class="footer-copyright">&copy; 2026 Fix Dhaka's Roads Initiative. <a href="https://github.com/selise/dhakatraffic" target="_blank" rel="noopener noreferrer">Open-source policy proposal.</a></p>
     </div>
   </footer>
 
   <!-- ═══════ SCRIPTS ═══════ -->
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide icons (deferred script is now loaded)
+      lucide.createIcons();
 
-    // Intersection Observer for fade-in animations (with prefers-reduced-motion check)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Intersection Observer for fade-in animations (with prefers-reduced-motion check)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (prefersReducedMotion) {
-      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      }
+
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !expanded);
+          navLinks.classList.toggle('nav-open');
         });
-      }, { threshold: 0.12 });
 
-      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    }
-
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', !expanded);
-        navLinks.classList.toggle('nav-open');
-      });
-
-      // Close nav when clicking a link
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navToggle.setAttribute('aria-expanded', 'false');
-          navLinks.classList.remove('nav-open');
+        // Close nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('nav-open');
+          });
         });
-      });
-    }
+      }
+    });
   </script>
 
 </body>
