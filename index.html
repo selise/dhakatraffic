@@ -5,6 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2C37W1ZYF2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2C37W1ZYF2');
+  </script>
+
   <!-- ═══════ PRIMARY META ═══════ -->
   <title>Fix Dhaka's Roads — Road Pricing for a Moving City</title>
   <meta name="description"
@@ -68,7 +78,7 @@
 
   <!-- ═══════ SCRIPTS ═══════ -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="i18n.js" defer></script>
+  <!-- i18n.js removed: file not available on deployment -->
 
   <!-- ═══════ JSON-LD: WebSite ═══════ -->
   <script type="application/ld+json">
@@ -245,10 +255,10 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#top" class="nav-logo" aria-label="Fix Dhaka's Roads — Home">
         <svg class="nav-logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-          <rect width="28" height="28" rx="7" fill="#00e59b"/>
-          <path d="M7 20l4-12h2l1.5 6L16 8h2l4 12" stroke="#0b0f1a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="9" cy="20" r="1.5" fill="#0b0f1a"/>
-          <circle cx="19" cy="20" r="1.5" fill="#0b0f1a"/>
+          <rect x="8" y="1" width="12" height="26" rx="3" fill="#1a1a2e" stroke="#00e59b" stroke-width="1.5"/>
+          <circle cx="14" cy="7" r="2.8" fill="#ff4444"/>
+          <circle cx="14" cy="14" r="2.8" fill="#ffcc00"/>
+          <circle cx="14" cy="21" r="2.8" fill="#00e59b"/>
         </svg>
         <span>Fix Dhaka's Roads</span>
       </a>
@@ -338,15 +348,15 @@
         you actually use — not for
         simply owning a vehicle. It's fair, efficient, and proven worldwide.</p>
 
-      <div class="features-grid" role="list" aria-label="How road pricing works">
-        <article class="feature-item" role="listitem">
+      <div class="features-grid" aria-label="How road pricing works">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="map-pin" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Location-Based</h3>
             <p>Fees depend on which zone you drive through — the most congested areas cost more.</p>
           </div>
         </article>
-        <article class="feature-item" role="listitem">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="clock" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Time-Based</h3>
@@ -354,7 +364,7 @@
             </p>
           </div>
         </article>
-        <article class="feature-item" role="listitem">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="maximize" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Size Matters</h3>
@@ -362,21 +372,21 @@
               rewarded.</p>
           </div>
         </article>
-        <article class="feature-item" role="listitem">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="banknote" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Revenue for Transit</h3>
             <p>Every taka collected funds metro expansions, new buses, and better roads for everyone.</p>
           </div>
         </article>
-        <article class="feature-item" role="listitem">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="ambulance" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Emergency Vehicles Free</h3>
             <p>Licensed ambulances, fire trucks, and police vehicles are fully exempt — always.</p>
           </div>
         </article>
-        <article class="feature-item" role="listitem">
+        <article class="feature-item">
           <div class="icon-circle" aria-hidden="true"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
           <div>
             <h3>Proven Globally</h3>
