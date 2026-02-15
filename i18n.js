@@ -117,41 +117,18 @@ class Translator {
   }
 
   renderSwitcher() {
-    // Insert switcher into the nav (before the nav-toggle button)
-    const nav = document.querySelector('.site-nav');
-    if (!nav) return;
-
-    let switcher = document.getElementById('lang-switcher');
-    if (!switcher) {
-      switcher = document.createElement('div');
-      switcher.id = 'lang-switcher';
-      switcher.setAttribute('role', 'radiogroup');
-      switcher.setAttribute('aria-label', 'Language');
-
-      // Insert before the nav-toggle button
-      const toggle = nav.querySelector('.nav-toggle');
-      if (toggle) {
-        nav.insertBefore(switcher, toggle);
-      } else {
-        nav.appendChild(switcher);
-      }
-    }
-
-    const cultures = Object.entries(UILM_CONFIG.supportedCultures);
-    switcher.innerHTML = cultures.map(([code, info]) =>
-      `<button class="lang-btn${code === this.currentCulture ? ' active' : ''}"
-              data-lang="${code}"
-              role="radio"
-              aria-checked="${code === this.currentCulture}"
-              aria-label="${info.name}"
-              title="${info.name}">${info.label}</button>`
-    ).join('');
+    // Switcher markup lives in index.html; just attach click handlers and sync state
+    const switcher = document.getElementById('lang-switcher');
+    if (!switcher) return;
 
     switcher.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         this.setLanguage(btn.dataset.lang);
       });
     });
+
+    // Sync active state with the current culture (may differ from HTML default)
+    this.updateSwitcherState();
   }
 
   updateSwitcherState() {
