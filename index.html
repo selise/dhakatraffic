@@ -79,7 +79,146 @@
 
   <!-- ═══════ SCRIPTS ═══════ -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="i18n.js" defer></script>
+  <script defer>
+  /**
+   * i18n — Language detection + translation manager
+   * Uses SELISE Blocks UILM API for translations.
+   * Auto-detects Bengali/Bangla browser language on first visit.
+   */
+
+  const UILM_CONFIG = {
+    projectKey: 'Pca81546c695f46d099eacb66adcb6899',
+    baseUrl: 'https://api.seliseblocks.com/uilm/v1',
+    defaultCulture: 'en-US',
+    modules: ['common', 'dhaka-roads'],
+    supportedCultures: {
+      'en-US': { label: 'EN', name: 'English' },
+      'bn-BD': { label: 'বাং', name: 'বাংলা' }
+    }
+  };
+
+  function detectLanguage() {
+    const langs = navigator.languages
+      ? navigator.languages.map(l => l.toLowerCase())
+      : [navigator.language.toLowerCase()];
+    const isBengali = langs.some(l => l.startsWith('bn'));
+    return isBengali ? 'bn-BD' : 'en-US';
+  }
+
+  class Translator {
+    constructor() {
+      const stored = localStorage.getItem('selectedLanguage');
+      if (stored && UILM_CONFIG.supportedCultures[stored]) {
+        this.currentCulture = stored;
+      } else {
+        this.currentCulture = detectLanguage();
+        localStorage.setItem('selectedLanguage', this.currentCulture);
+      }
+      this.translations = {};
+      this.originalContent = {};
+    }
+
+    async init() {
+      this.snapshotOriginals();
+      this.renderSwitcher();
+      await this.loadTranslations(this.currentCulture);
+      this.applyTranslations();
+    }
+
+    snapshotOriginals() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (!this.originalContent[key]) {
+          this.originalContent[key] = el.innerHTML;
+        }
+      });
+    }
+
+    async loadTranslations(culture) {
+      this.currentCulture = culture;
+      localStorage.setItem('selectedLanguage', culture);
+      this.translations = {};
+
+      try {
+        const fetches = UILM_CONFIG.modules.map(async (mod) => {
+          const url = `${UILM_CONFIG.baseUrl}/Key/GetUilmFile?ProjectKey=${UILM_CONFIG.projectKey}&Language=${culture}&ModuleName=${mod}`;
+          const res = await fetch(url, {
+            headers: { 'x-blocks-key': UILM_CONFIG.projectKey }
+          });
+          if (res.ok) {
+            const text = await res.text();
+            if (text && text.trim()) {
+              const data = JSON.parse(text);
+              Object.assign(this.translations, data);
+            }
+          }
+        });
+        await Promise.all(fetches);
+      } catch (err) {
+        console.warn('Translation load failed, keeping current content:', err);
+      }
+    }
+
+    applyTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translated = this.translations[key];
+        if (translated) {
+          el.innerHTML = translated;
+        } else if (this.originalContent[key]) {
+          el.innerHTML = this.originalContent[key];
+        }
+      });
+
+      const langCode = this.currentCulture.split('-')[0];
+      document.documentElement.lang = langCode;
+      document.documentElement.dir = 'ltr';
+
+      this.updateSwitcherState();
+    }
+
+    async setLanguage(culture) {
+      if (culture === this.currentCulture) return;
+      const switcher = document.getElementById('lang-switcher');
+      if (switcher) switcher.classList.add('loading');
+
+      await this.loadTranslations(culture);
+      this.applyTranslations();
+
+      // Re-create Lucide icons in case translations replaced icon markup
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      if (switcher) switcher.classList.remove('loading');
+    }
+
+    renderSwitcher() {
+      const switcher = document.getElementById('lang-switcher');
+      if (!switcher) return;
+
+      switcher.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.setLanguage(btn.dataset.lang);
+        });
+      });
+
+      this.updateSwitcherState();
+    }
+
+    updateSwitcherState() {
+      const btns = document.querySelectorAll('#lang-switcher .lang-btn');
+      btns.forEach(btn => {
+        const isActive = btn.dataset.lang === this.currentCulture;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-checked', isActive);
+      });
+    }
+  }
+
+  const translator = new Translator();
+  document.addEventListener('DOMContentLoaded', () => translator.init());
+  </script>
 
   <!-- ═══════ JSON-LD: WebSite ═══════ -->
   <script type="application/ld+json">
@@ -292,8 +431,7 @@
         <span aria-hidden="true">🚦</span> A Policy Proposal for Dhaka
       </div>
       <h1 id="hero-heading" data-i18n="HERO_TITLE">Dhaka Deserves<br>to <span class="gradient-text">Move.</span></h1>
-      <p data-i18n="HERO_SUBTITLE">Every day, millions waste 2+ hours stuck in traffic. Road pricing is a proven, fair
-        solution that can cut congestion by 30% — like it did in London, Stockholm, and Singapore.</p>
+      <p data-i18n="HERO_SUBTITLE">Millions lose 2+ hours a day to gridlock that chokes the economy and poisons the air. Road pricing cut congestion 30% in London, 20% in Stockholm, and has kept Singapore moving for decades. Dhaka is next.</p>
       <div class="hero-buttons">
         <a href="#problem" class="btn btn-primary" data-i18n="BTN_LEARN_HOW" aria-label="Learn how road pricing works">
           Learn How <i data-lucide="arrow-down" style="width:18px;height:18px" aria-hidden="true"></i>

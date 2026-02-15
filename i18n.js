@@ -73,8 +73,11 @@ class Translator {
           headers: { 'x-blocks-key': UILM_CONFIG.projectKey }
         });
         if (res.ok) {
-          const data = await res.json();
-          Object.assign(this.translations, data);
+          const text = await res.text();
+          if (text && text.trim()) {
+            const data = JSON.parse(text);
+            Object.assign(this.translations, data);
+          }
         }
       });
       await Promise.all(fetches);
@@ -106,12 +109,14 @@ class Translator {
 
   async setLanguage(culture) {
     if (culture === this.currentCulture) return;
-    // Show loading state
     const switcher = document.getElementById('lang-switcher');
     if (switcher) switcher.classList.add('loading');
 
     await this.loadTranslations(culture);
     this.applyTranslations();
+
+    // Re-create Lucide icons in case translations replaced icon markup
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     if (switcher) switcher.classList.remove('loading');
   }
@@ -122,7 +127,9 @@ class Translator {
     if (!switcher) return;
 
     switcher.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         this.setLanguage(btn.dataset.lang);
       });
     });
