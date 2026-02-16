@@ -5,7 +5,6 @@ FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
 COPY i18n.js /usr/share/nginx/html/
-COPY env.js /usr/share/nginx/html/
 COPY env.template.js /usr/share/nginx/html/
 COPY og-image.png /usr/share/nginx/html/
 COPY favicon.png /usr/share/nginx/html/
