@@ -1,3 +1,5 @@
 llm-docs/
 extracted_keys.json
 modules.json
+extracted_keys_merged.json
+env.js

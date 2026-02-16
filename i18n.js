@@ -4,9 +4,34 @@
  * Auto-detects Bengali/Bangla browser language on first visit.
  */
 
+const runtimeEnv = window.__APP_ENV__ || {};
+
+function normalizeBaseUrl(url) {
+  if (!url) return '';
+  return url.replace(/\/+$/, '');
+}
+
+function resolveUilmConfig() {
+  const projectKey = runtimeEnv.REACT_APP_PUBLIC_X_BLOCKS_KEY || runtimeEnv.UILM_PROJECT_KEY || '';
+  const blocksApiBase =
+    runtimeEnv.REACT_APP_PUBLIC_BLOCKS_API_URL ||
+    runtimeEnv.REACT_APP_PUBLIC_API_URL ||
+    runtimeEnv.UILM_BASE_URL ||
+    '';
+
+  return {
+    projectKey,
+    baseUrl: blocksApiBase.includes('/uilm/v1')
+      ? normalizeBaseUrl(blocksApiBase)
+      : `${normalizeBaseUrl(blocksApiBase)}/uilm/v1`
+  };
+}
+
+const resolvedConfig = resolveUilmConfig();
+
 const UILM_CONFIG = {
-  projectKey: 'Pca81546c695f46d099eacb66adcb6899',
-  baseUrl: 'https://api.seliseblocks.com/uilm/v1',
+  projectKey: resolvedConfig.projectKey,
+  baseUrl: resolvedConfig.baseUrl,
   defaultCulture: 'en-US',
   modules: ['common', 'dhaka-roads'],
   supportedCultures: {
@@ -14,6 +39,10 @@ const UILM_CONFIG = {
     'bn-BD': { label: 'বাং', name: 'বাংলা' }
   }
 };
+
+function hasUilmConfig() {
+  return Boolean(UILM_CONFIG.projectKey && UILM_CONFIG.baseUrl);
+}
 
 /**
  * Detect if the user's browser language is Bengali/Bangla.
@@ -65,6 +94,13 @@ class Translator {
     this.currentCulture = culture;
     localStorage.setItem('selectedLanguage', culture);
     this.translations = {};
+
+    if (!hasUilmConfig()) {
+      console.warn(
+        'UILM configuration missing. Define REACT_APP_PUBLIC_X_BLOCKS_KEY and REACT_APP_PUBLIC_BLOCKS_API_URL in runtime env.'
+      );
+      return;
+    }
 
     try {
       const fetches = UILM_CONFIG.modules.map(async (mod) => {
