@@ -6,6 +6,7 @@ COPY index.html /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
 COPY i18n.js /usr/share/nginx/html/
 COPY env.template.js /usr/share/nginx/html/
+COPY .env.prod /usr/share/nginx/html/.env.prod
 COPY og-image.png /usr/share/nginx/html/
 COPY favicon.png /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
