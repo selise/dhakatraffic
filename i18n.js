@@ -12,11 +12,10 @@ function normalizeBaseUrl(url) {
 }
 
 function resolveUilmConfig() {
-  const projectKey = runtimeEnv.REACT_APP_PUBLIC_X_BLOCKS_KEY || runtimeEnv.UILM_PROJECT_KEY || '';
+  const projectKey = runtimeEnv.VITE_X_BLOCKS_KEY || '';
   const blocksApiBase =
-    runtimeEnv.REACT_APP_PUBLIC_BLOCKS_API_URL ||
-    runtimeEnv.REACT_APP_PUBLIC_API_URL ||
-    runtimeEnv.UILM_BASE_URL ||
+    runtimeEnv.VITE_BLOCKS_API_URL ||
+    runtimeEnv.VITE_API_BASE_URL ||
     '';
 
   return {
@@ -97,7 +96,7 @@ class Translator {
 
     if (!hasUilmConfig()) {
       console.warn(
-        'UILM configuration missing. Define REACT_APP_PUBLIC_X_BLOCKS_KEY and REACT_APP_PUBLIC_BLOCKS_API_URL in runtime env.'
+        'UILM configuration missing. Define VITE_X_BLOCKS_KEY and VITE_BLOCKS_API_URL in runtime env.'
       );
       return;
     }
